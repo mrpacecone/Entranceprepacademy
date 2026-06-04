@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mrpacecone Academy – BALLB Entrance Hub</title>
+<meta name="description" content="Nepal's most comprehensive BALLB entrance preparation platform. TU Faculty of Law syllabus, 10,000+ MCQs, AI-powered notes, mock tests.">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-badge">⚖ Law Academy</div>
+    <h2>Mrpacecone Academy</h2>
+    <span class="sub">BALLB Entrance Hub</span>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Main</div>
+    <div class="nav-item active" data-page="dashboard" onclick="nav('dashboard')"><span class="ico">🏠</span>Dashboard</div>
+    <div class="nav-item" data-page="studyplan" onclick="nav('studyplan')"><span class="ico">📅</span>Study Plan</div>
+    <div class="nav-item" data-page="syllabus" onclick="nav('syllabus')"><span class="ico">📋</span>Official Syllabus</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Study Modules</div>
+    <div class="nav-item" data-page="module1" onclick="nav('module1')"><span class="ico">⚖</span>Introduction to Law</div>
+    <div class="nav-item" data-page="module2" onclick="nav('module2')"><span class="ico">🏛</span>Role of Law</div>
+    <div class="nav-item" data-page="module3" onclick="nav('module3')"><span class="ico">📜</span>Sources of Law</div>
+    <div class="nav-item" data-page="module4" onclick="nav('module4')"><span class="ico">🤝</span>Rights &amp; Duties</div>
+    <div class="nav-item" data-page="module5" onclick="nav('module5')"><span class="ico">👤</span>Legal Personality</div>
+    <div class="nav-item" data-page="module6" onclick="nav('module6')"><span class="ico">📖</span>Constitution</div>
+    <div class="nav-item" data-page="module7" onclick="nav('module7')"><span class="ico">🔒</span>Fundamental Rights<span class="nav-badge nb-teal">7</span></div>
+    <div class="nav-item" data-page="jurists" onclick="nav('jurists')"><span class="ico">👨‍⚖️</span>Jurists &amp; Theories<span class="nav-badge nb-gold">9</span></div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Practice</div>
+    <div class="nav-item" data-page="mcq" onclick="nav('mcq')"><span class="ico">🎯</span>MCQ Practice<span class="nav-badge nb-gold">10k+</span></div>
+    <div class="nav-item" data-page="subjective" onclick="nav('subjective')"><span class="ico">✍</span>Subjective Practice</div>
+    <div class="nav-item" data-page="writing" onclick="nav('writing')"><span class="ico">🖊</span>Creative Writing</div>
+    <div class="nav-item" data-page="prevq" onclick="nav('prevq')"><span class="ico">📂</span>Previous Questions<span class="nav-badge nb-red">New</span></div>
+    <div class="nav-item" data-page="mock" onclick="nav('mock')"><span class="ico">⏱</span>Mock Tests</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Progress</div>
+    <div class="nav-item" data-page="progress" onclick="nav('progress')"><span class="ico">📊</span>My Progress</div>
+    <div class="nav-item" data-page="readiness" onclick="nav('readiness')"><span class="ico">🎓</span>Readiness Meter</div>
+    <div class="nav-item" data-page="bookmarks" onclick="nav('bookmarks')"><span class="ico">⭐</span>Bookmarks</div>
+    <div class="nav-item" data-page="materials" onclick="nav('materials')"><span class="ico">🤖</span>AI Study Materials<span class="nav-badge nb-sky">AI</span></div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Admin</div>
+    <div class="nav-item" data-page="admin" onclick="nav('admin')"><span class="ico">🛠</span>Admin Panel<span class="nav-badge nb-red">🔒</span></div>
+    <div class="nav-item" data-page="analytics" onclick="nav('analytics');renderAnalytics()"><span class="ico">📈</span>User Analytics</div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="topbar-title" id="topbarTitle">Dashboard</div>
+  </div>
+  <div class="topbar-right">
+    <div class="streak">🔥 <span id="streakVal">0</span> Day Streak</div>
+    <div class="exam-chip">BALLB 2025</div>
+    <button class="topbar-btn" onclick="nav('admin')">🛠 Admin</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: DASHBOARD
+══════════════════════════════════════════ -->
+<div class="page active" id="pg-dashboard">
+  <div class="hero-card">
+    <div class="hero-symbol">⚖</div>
+    <h1>BALLB Entrance Hub</h1>
+    <p>Nepal's most complete BALLB preparation platform. Full TU Faculty of Law syllabus, AI-generated study notes, 10,000+ MCQs, mock tests and user analytics — all in one place.</p>
+    <div class="exam-pills">
+      <div class="exam-pill">Full Marks: <strong>100</strong></div>
+      <div class="exam-pill">Pass Marks: <strong>40</strong></div>
+      <div class="exam-pill">Duration: <strong>3 Hours</strong></div>
+      <div class="exam-pill">Section A – MCQs: <strong>30 × 1 mark</strong></div>
+      <div class="exam-pill">Section B – Subjective: <strong>50 marks</strong></div>
+      <div class="exam-pill">Section C – Creative Writing: <strong>20 marks</strong></div>
+    </div>
+  </div>
+
+  <!-- Notices -->
+  <div class="card card-p mb-18" id="noticesCard">
+    <div class="section-hdr" style="margin-bottom:14px"><h2>📢 Notices &amp; Updates</h2><button class="link-btn" onclick="nav('admin')">Manage →</button></div>
+    <div id="noticesBox"><p class="text-dim text-sm">No notices yet.</p></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid-4 mb-18">
+    <div class="stat-card">
+      <span class="stat-icon">📚</span>
+      <div class="stat-val">7/8</div>
+      <div class="stat-lbl">Modules Studied</div>
+      <div class="stat-bar"><div class="stat-bar-fill" data-w="87%"></div></div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">🎯</span>
+      <div class="stat-val" id="mcqCount">0</div>
+      <div class="stat-lbl">MCQs Practiced</div>
+      <div class="stat-bar"><div class="stat-bar-fill" data-w="34%"></div></div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">✍</span>
+      <div class="stat-val">18</div>
+      <div class="stat-lbl">Essays Written</div>
+      <div class="stat-bar"><div class="stat-bar-fill" data-w="36%"></div></div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">⏱</span>
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">Mock Tests</div>
+      <div class="stat-bar"><div class="stat-bar-fill" data-w="50%"></div></div>
+    </div>
+  </div>
+
+  <!-- Readiness + Modules -->
+  <div class="grid-2 mb-18">
+    <div class="card card-p">
+      <h2 class="serif" style="font-size:17px;margin-bottom:18px">📊 Module Readiness</h2>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Law Fundamentals</span><span class="val">92%</span></div><div class="prog-track"><div class="prog-fill" data-w="92%" style="width:92%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Constitution</span><span class="val">87%</span></div><div class="prog-track"><div class="prog-fill" data-w="87%" style="width:87%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Fundamental Rights</span><span class="val">94%</span></div><div class="prog-track"><div class="prog-fill" data-w="94%" style="width:94%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Jurists &amp; Theories</span><span class="val">76%</span></div><div class="prog-track"><div class="prog-fill blue" data-w="76%" style="width:76%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Creative Writing</span><span class="val">81%</span></div><div class="prog-track"><div class="prog-fill" data-w="81%" style="width:81%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Sources of Law</span><span class="val">68%</span></div><div class="prog-track"><div class="prog-fill blue" data-w="68%" style="width:68%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Rights &amp; Duties</span><span class="val">55%</span></div><div class="prog-track"><div class="prog-fill red" data-w="55%" style="width:55%"></div></div></div>
+    </div>
+    <div class="card card-p">
+      <h2 class="serif" style="font-size:17px;margin-bottom:6px;text-align:center">🎓 Overall Readiness</h2>
+      <div class="readiness-wrap">
+        <div class="r-circle" style="background:conic-gradient(var(--gold) 0% 88%,var(--border) 88% 100%)">
+          <div class="r-circle-inner"><div class="r-pct">88%</div><div class="r-lbl">READY</div></div>
+        </div>
+        <div class="r-status"><strong class="text-gold">Almost there!</strong> Focus on Rights &amp; Duties (55%) and Sources of Law (68%) to push past 90%.<br><br>Complete all modules to achieve <strong class="text-gold">🎓 Entrance Ready (100%)</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modules Grid -->
+  <div class="section-hdr"><h2>Study Modules</h2><button class="link-btn" onclick="nav('module1')">View All →</button></div>
+  <div class="grid-3">
+    <div class="module-card" onclick="nav('module1')"><div class="m-icon">⚖</div><div class="m-title">Introduction to Law</div><div class="m-desc">Definitions, nature, characteristics, jurisprudence basics and kinds of law.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill" style="width:92%"></div></div><span class="m-pct">92%</span></div></div>
+    <div class="module-card" onclick="nav('module6')"><div class="m-icon">📖</div><div class="m-title">Constitution of Nepal</div><div class="m-desc">Constitutional development, organs of state, separation of powers.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill" style="width:87%"></div></div><span class="m-pct">87%</span></div></div>
+    <div class="module-card" onclick="nav('module7')"><div class="m-icon">🔒</div><div class="m-title">Fundamental Rights</div><div class="m-desc">Article-wise coverage of all fundamental rights under the Constitution.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill" style="width:94%"></div></div><span class="m-pct">94%</span></div></div>
+    <div class="module-card" onclick="nav('module3')"><div class="m-icon">📜</div><div class="m-title">Sources of Law</div><div class="m-desc">Constitution, legislation, precedents, customs, international treaties.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill red" style="width:68%"></div></div><span class="m-pct">68%</span></div></div>
+    <div class="module-card" onclick="nav('jurists')"><div class="m-icon">👨‍⚖️</div><div class="m-title">Jurists &amp; Theories</div><div class="m-desc">Austin, Salmond, Pound, Kelsen, Hart, Savigny, Bentham and more.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill blue" style="width:76%"></div></div><span class="m-pct">76%</span></div></div>
+    <div class="module-card" onclick="nav('module4')"><div class="m-icon">🤝</div><div class="m-title">Rights &amp; Duties</div><div class="m-desc">Natural, human, legal, civil, political rights and constitutional duties.</div><div class="m-prog"><div class="m-prog-bar"><div class="m-prog-fill red" style="width:55%"></div></div><span class="m-pct">55%</span></div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE: SYLLABUS
+══════════════════════════════════════════ -->
+<div class="page" id="pg-syllabus">
+  <div class="hero-card"><div class="hero-symbol">📋</div><h1>Official BALLB Syllabus</h1><p>As prescribed by the Faculty of Law, Tribhuvan University (TU) and conducted through Nepal Law Campus (NLC) and affiliated campuses.</p></div>
+  <div class="grid-2">
+    <div class="card card-p study-body">
+      <h3>📋 Exam Pattern</h3>
+      <ul><li><strong>Full Marks:</strong> 100 &nbsp;|&nbsp; <strong>Pass Marks:</strong> 40</li><li><strong>Duration:</strong> 3 Hours</li><li><strong>Section A – MCQs:</strong> 30 questions × 1 mark = 30 marks</li><li><strong>Section B – Long Answer:</strong> 1 question = 20 marks</li><li><strong>Section B – Short Answers:</strong> 3 questions × 10 marks = 30 marks</li><li><strong>Section C – Creative Writing:</strong> ~300 words = 20 marks</li></ul>
+      <div class="src-tag"><span class="lbl">Source:</span> Faculty of Law, TU &nbsp;|&nbsp; <span class="lbl">Ref:</span> nlc.edu.np/admission/ballb &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+    </div>
+    <div class="card card-p study-body">
+      <h3>📚 Syllabus Modules</h3>
+      <ul>
+        <li><strong>Module 1:</strong> Introduction to Law and Kinds of Law</li>
+        <li><strong>Module 2:</strong> Importance and Role of Law in Society</li>
+        <li><strong>Module 3:</strong> Sources of Law</li>
+        <li><strong>Module 4:</strong> Rights and Duties</li>
+        <li><strong>Module 5:</strong> Person and Legal Personality</li>
+        <li><strong>Module 6:</strong> Constitution of Nepal</li>
+        <li><strong>Module 7:</strong> Fundamental Rights under Constitution</li>
+        <li><strong>Module 8:</strong> English &amp; Creative Writing</li>
+      </ul>
+      <div class="src-tag"><span class="lbl">Source:</span> TU Faculty of Law Official Entrance Syllabus</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODULES 1–7 (Study Content)
+══════════════════════════════════════════ -->
+<!-- MODULE 1 -->
+<div class="page" id="pg-module1">
+  <div class="hero-card"><h1>⚖ Introduction to Law</h1><p>Module 1 — Definitions, nature, characteristics of law and introduction to jurisprudence.</p></div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'m1-notes')">📖 Notes</button>
+    <button class="tab" onclick="switchTab(this,'m1-mcq')">🎯 MCQ</button>
+    <button class="tab" onclick="switchTab(this,'m1-short')">✍ Short Answers</button>
+  </div>
+  <div id="m1-notes" class="card card-p study-body">
+    <h3>What is Law?</h3>
+    <p>Law is a system of rules and regulations created and enforced by social or governmental institutions to regulate behaviour. Different jurisprudential schools define it differently.</p>
+    <div class="kp-box"><h4>Key Definitions</h4><ul>
+      <li><strong>Austin:</strong> "Law is a command issued by a sovereign, backed by a sanction."</li>
+      <li><strong>Salmond:</strong> "Law is the body of principles recognized and applied by the state in the administration of justice."</li>
+      <li><strong>Holland:</strong> "Law is a general rule of external human action enforced by a sovereign political authority."</li>
+      <li><strong>Roscoe Pound:</strong> Law is a means of social engineering to satisfy maximum wants with minimum friction.</li>
+    </ul></div>
+    <h3>Nature &amp; Characteristics of Law</h3>
+    <ul><li><strong>Normative:</strong> Law prescribes how people ought to behave</li><li><strong>General:</strong> Applies to all persons without discrimination</li><li><strong>Territorial:</strong> Operates within a definite territory</li><li><strong>State-enforced:</strong> Backed by sovereign authority and sanctions</li><li><strong>Dynamic:</strong> Law changes with society's needs</li></ul>
+    <h3>Types of Law</h3>
+    <p><strong>Civil vs Criminal:</strong> Civil governs disputes between private parties; criminal punishes acts that violate public order.</p>
+    <p><strong>Constitutional Law:</strong> Supreme law establishing government structure and guaranteeing fundamental rights.</p>
+    <p><strong>Administrative Law:</strong> Governs activities of government agencies.</p>
+    <p><strong>Public vs Private:</strong> Public = state-individual relationship; Private = individual-individual relationship.</p>
+    <p><strong>Substantive vs Procedural:</strong> Substantive defines rights &amp; duties; procedural prescribes enforcement process.</p>
+    <div class="src-tag"><span class="lbl">Source:</span> TU Faculty of Law Syllabus &nbsp;|&nbsp; <span class="lbl">Ref:</span> meroadalat.com BALLB Syllabus Guide &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+  </div>
+  <div id="m1-mcq" style="display:none">
+    <div class="q-card"><div class="q-meta"><span class="badge badge-gold">Law</span><span class="badge badge-green">Easy</span><span class="q-num">Q1</span></div><div class="q-text">Who defined law as "a command of the sovereign backed by a sanction"?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>Roscoe Pound</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">B</span>John Austin</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">C</span>H.L.A. Hart</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>Savigny</div></div><div class="exp-box"><h4>Explanation</h4><p>John Austin (Analytical school) proposed the Command Theory of Law: law is a general command of a politically superior (sovereign) to politically inferior, backed by sanction for non-compliance. This theory is among the most frequently tested in BALLB entrance.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button><button class="btn btn-ghost btn-sm" onclick="bookmark('module1','Introduction to Law – Q1')">⭐ Bookmark</button></div></div>
+    <div class="q-card"><div class="q-meta"><span class="badge badge-gold">Law</span><span class="badge badge-gold">Medium</span><span class="q-num">Q2</span></div><div class="q-text">Which type of law governs the relationship between individuals and the state?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>Private Law</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>Civil Law</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">C</span>Public Law</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>Procedural Law</div></div><div class="exp-box"><h4>Explanation</h4><p>Public law governs the relationship between individuals and the state, including constitutional, administrative, and criminal law. Private law regulates relationships between private individuals (contract, tort, property).</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+    <div class="q-card"><div class="q-meta"><span class="badge badge-gold">Jurisprudence</span><span class="badge badge-red">Hard</span><span class="q-num">Q3</span></div><div class="q-text">"Juris Prudentia" means:</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>Science of morality</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>Philosophy of rights</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">C</span>Knowledge of law</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>System of governance</div></div><div class="exp-box"><h4>Explanation</h4><p>"Jurisprudence" is derived from the Latin "Juris Prudentia" meaning "knowledge of law" or "skill in law." Bentham called it the "science of law." Salmond defined it as "the science of the first principles of the civil law."</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+  </div>
+  <div id="m1-short" style="display:none">
+    <div class="card card-p">
+      <h3 class="serif" style="font-size:17px;margin-bottom:16px">Short Answer Practice (10 marks each)</h3>
+      <p style="color:var(--gold);font-weight:600;margin-bottom:12px">Q. What is Jurisprudence? Explain its scope and importance.</p>
+      <div class="writing-pad">
+        <textarea placeholder="Write your answer here… (Target: 150–200 words for a 10-mark answer)" oninput="wc(this,'wcSA1',200)"></textarea>
+        <div class="word-meter">Words: <span class="count" id="wcSA1">0</span><span class="target">/ 200</span><div class="word-bar"><div class="word-bar-fill" style="width:0%"></div></div></div>
+      </div>
+      <div class="kp-box mt-16"><h4>Model Answer – Key Points</h4><ul><li>Jurisprudence = science/formal science of positive law</li><li>Derived from Latin "Juris Prudentia" (knowledge of law)</li><li>Bentham: "science of law" | Salmond: "science of first principles of civil law"</li><li>Scope: Nature of law, legal rights, legal personality, liability, property, inheritance</li><li>Purpose: Systematic, theoretical understanding of legal concepts</li></ul></div>
+      <button class="btn btn-gold btn-sm mt-16" onclick="toast('Answer saved!','success')">💾 Save Answer</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 2 -->
+<div class="page" id="pg-module2">
+  <div class="hero-card"><h1>🏛 Role of Law in Society</h1><p>Module 2 — Law and social order, justice, development, rule of law, democracy and social change.</p></div>
+  <div class="card card-p study-body">
+    <h3>Law and Social Order</h3>
+    <p>Law maintains social order by providing a framework of rules that regulate human behaviour and resolve conflicts. Without law, social cohesion would be impossible — Hobbes described the pre-legal state as "nasty, brutish and short."</p>
+    <h3>Law and Justice</h3>
+    <p>The primary aim of law is to achieve justice. Aristotle distinguished <strong>distributive justice</strong> (fair distribution of goods) and <strong>corrective justice</strong> (remedying wrongs). Formal justice = treating like cases alike.</p>
+    <h3>Rule of Law</h3>
+    <p>A.V. Dicey's three pillars: (1) <strong>Supremacy of law</strong> — no person is above law, (2) <strong>Equality before law</strong>, (3) <strong>Predominance of legal spirit</strong> — rights secured through ordinary courts. Enshrined in Article 1 of Nepal's Constitution 2015.</p>
+    <h3>Law and Democracy</h3>
+    <p>Democracy requires rule of law to function. Free and fair elections, protection of civil liberties, independent judiciary — all depend on a robust legal framework.</p>
+    <h3>Social Change Through Law</h3>
+    <p>Law can be an instrument of social change (Roscoe Pound's social engineering). Examples from Nepal: Muluki Ain reforms, caste discrimination laws, women's rights legislation.</p>
+    <div class="kp-box"><h4>High-Yield Points</h4><ul><li>Dicey's Rule of Law: 3 pillars — supremacy, equality, legal spirit</li><li>Aristotle: distributive vs corrective justice</li><li>Roscoe Pound: law as social engineering</li><li>Nepal: Art. 1 = constitutional supremacy = rule of law</li></ul></div>
+    <div class="src-tag"><span class="lbl">Source:</span> TU Faculty of Law Syllabus &nbsp;|&nbsp; <span class="lbl">Ref:</span> CollegeNP BALLB Guide &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+  </div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="page" id="pg-module3">
+  <div class="hero-card"><h1>📜 Sources of Law</h1><p>Module 3 — Constitution, legislation, judicial precedents, customs, treaties and religious sources.</p></div>
+  <div class="card card-p study-body">
+    <h3>1. Constitution</h3>
+    <p>The supreme source of law. All other laws must conform to it. In Nepal: <strong>Constitution of Nepal 2015</strong> is the Grundnorm. Article 1 declares it the fundamental law — any inconsistent law is void.</p>
+    <h3>2. Legislation</h3>
+    <p><strong>Primary legislation</strong> (Acts of Parliament) and <strong>subordinate/delegated legislation</strong> (Regulations, Rules, Bylaws made under delegated authority).</p>
+    <h3>3. Judicial Precedents</h3>
+    <p>Doctrine of <em>stare decisis</em> — higher court decisions bind lower courts. Nepal's Supreme Court decisions are binding precedents under <strong>Article 128(2)</strong> of the Constitution.</p>
+    <h3>4. Custom</h3>
+    <p>Long-established practices recognized as law. Must be: immemorial, reasonable, certain, consistent, compulsory, and peaceful. In Nepal, customs recognized under Muluki Civil Code 2017.</p>
+    <h3>5. International Treaties</h3>
+    <p>Ratified treaties become part of domestic law. Nepal is party to ICCPR, ICESCR, CEDAW, CRC, CAT and others. Article 278 of the Constitution governs treaty ratification.</p>
+    <h3>6. Equity and Religious Sources</h3>
+    <p>Equity fills gaps in common law — fairness and conscience. Religious sources (Hindu, Islamic law) historically significant but now secondary in Nepal's secular state framework.</p>
+    <div class="src-tag"><span class="lbl">Source:</span> Constitution of Nepal 2015 &nbsp;|&nbsp; TU Faculty of Law Syllabus &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+  </div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="page" id="pg-module4">
+  <div class="hero-card"><h1>🤝 Rights &amp; Duties</h1><p>Module 4 — Natural rights, human rights, legal rights, civil rights, political rights and legal duties.</p></div>
+  <div class="card card-p study-body">
+    <h3>Types of Rights</h3>
+    <ul><li><strong>Natural Rights:</strong> Inherent to all humans by nature — Locke: life, liberty, property. Pre-political and inalienable.</li><li><strong>Human Rights:</strong> International standards under UDHR 1948. Universal, indivisible, interdependent.</li><li><strong>Legal Rights:</strong> Rights recognized and enforceable by law. Arise from positive law.</li><li><strong>Civil Rights:</strong> Right to equal treatment under law, non-discrimination.</li><li><strong>Political Rights:</strong> Right to vote, stand for election, participate in governance.</li></ul>
+    <h3>Types of Duties</h3>
+    <ul><li><strong>Moral Duties:</strong> Based on conscience and ethics — not legally enforceable (e.g., duty to help the poor).</li><li><strong>Legal Duties:</strong> Obligations imposed by law and enforceable by state (e.g., duty to pay taxes).</li><li><strong>Constitutional Duties:</strong> Article 48 of Nepal's Constitution — duties of citizens including defending sovereignty, paying taxes, environmental protection.</li></ul>
+    <div class="kp-box"><h4>Salmond's Jural Relations (Hohfeld)</h4><ul><li>Right ↔ Duty (correlative)</li><li>Privilege ↔ No-right</li><li>Power ↔ Liability</li><li>Immunity ↔ Disability</li></ul></div>
+    <div class="src-tag"><span class="lbl">Source:</span> TU Faculty of Law Syllabus &nbsp;|&nbsp; Article 48, Constitution of Nepal 2015</div>
+  </div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="page" id="pg-module5">
+  <div class="hero-card"><h1>👤 Person &amp; Legal Personality</h1><p>Module 5 — Natural persons, legal persons, legal capacity and liability.</p></div>
+  <div class="card card-p study-body">
+    <h3>Natural Person</h3>
+    <p>A human being recognized by law as having legal rights and duties. Legal capacity begins at birth (with some rights recognised from conception). Ends at death.</p>
+    <h3>Legal (Juristic) Person</h3>
+    <p>Non-human entities granted legal personality: <strong>corporations</strong>, government bodies, registered institutions, universities, trusts. They can sue/be sued, own property, make contracts.</p>
+    <h3>Theories of Legal Personality</h3>
+    <ul><li><strong>Fiction Theory (Savigny):</strong> Legal persons are legal fictions — only humans are real persons.</li><li><strong>Realist Theory (Gierke):</strong> Corporations have real existence, not mere fiction.</li><li><strong>Concession Theory:</strong> Legal personality is granted by State — it's a concession.</li><li><strong>Purpose Theory (Brinz):</strong> Legal person = a purpose or fund dedicated to a purpose.</li></ul>
+    <h3>Legal Capacity</h3>
+    <p><strong>Capacity to have rights</strong> (all persons) vs <strong>capacity to act</strong> (limited for minors under 18, mentally incapacitated). In Nepal: Muluki Civil Code 2017 governs capacity.</p>
+    <h3>Liability</h3>
+    <p><strong>Civil liability:</strong> Breach of duty causing harm → compensation. <strong>Criminal liability:</strong> Requires <em>actus reus</em> (guilty act) + <em>mens rea</em> (guilty mind).</p>
+    <div class="src-tag"><span class="lbl">Source:</span> Muluki Civil Code 2017 &nbsp;|&nbsp; TU Faculty of Law Syllabus &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+  </div>
+</div>
+
+<!-- MODULE 6: CONSTITUTION -->
+<div class="page" id="pg-module6">
+  <div class="hero-card"><h1>📖 Constitution of Nepal</h1><p>Module 6 — Constitutional development, organs of state, separation of powers and checks &amp; balances.</p></div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'m6-notes')">📖 Notes</button>
+    <button class="tab" onclick="switchTab(this,'m6-arts')">📜 Key Articles</button>
+    <button class="tab" onclick="switchTab(this,'m6-mcq')">🎯 MCQ</button>
+  </div>
+  <div id="m6-notes" class="card card-p study-body">
+    <h3>Constitution of Nepal 2015 (2072 BS)</h3>
+    <p>Promulgated on <strong>20 September 2015 (3 Asoj 2072 BS)</strong>. Nepal's <strong>seventh constitution</strong>. Replaced the Interim Constitution 2007.</p>
+    <div class="kp-box"><h4>Key Features</h4><ul><li>Federal Democratic Republic with 3 tiers of government</li><li>7 Provinces, 77 Districts, 753 Local Bodies</li><li>35+ Fundamental Rights guaranteed (Parts 2 &amp; 3)</li><li>Independent judiciary with Supreme Court at apex</li><li>Bicameral federal parliament: House of Representatives (275) + National Assembly (59)</li><li>Constitutional Supremacy — Article 1</li><li>Secular state — Article 4</li></ul></div>
+    <h3>Constitutional Development Timeline</h3>
+    <ul><li><strong>1948:</strong> Government of Nepal Act (first constitution)</li><li><strong>1951:</strong> Interim Government of Nepal Act</li><li><strong>1959:</strong> Constitution of Nepal (multiparty democracy, first elected parliament)</li><li><strong>1962:</strong> Constitution of Nepal (Panchayat system — parties banned)</li><li><strong>1990:</strong> Constitution of the Kingdom of Nepal (parliamentary democracy restored)</li><li><strong>2007:</strong> Interim Constitution of Nepal (Republic declared in 2008)</li><li><strong>2015:</strong> Constitution of Nepal (current — federal, secular, republican)</li></ul>
+    <h3>Organs of State</h3>
+    <p><strong>Legislature:</strong> Bicameral Parliament — House of Representatives (275 members, 5-year term) + National Assembly (59 members, 6-year term). Lawmaking power.</p>
+    <p><strong>Executive:</strong> President (constitutional head) + Prime Minister (executive head leading Council of Ministers). President elected by Electoral College.</p>
+    <p><strong>Judiciary:</strong> Supreme Court → High Courts (7, one per province) → District Courts (77). Ensures rule of law and protects fundamental rights via judicial review.</p>
+    <h3>Separation of Powers &amp; Checks and Balances</h3>
+    <p>Montesquieu's doctrine: legislative, executive, judicial powers separated to prevent tyranny. Nepal implements checks: Parliament can pass vote of no-confidence; PM advises dissolution; Supreme Court exercises judicial review over laws and executive acts.</p>
+    <div class="src-tag"><span class="lbl">Source:</span> Constitution of Nepal 2015 &nbsp;|&nbsp; <span class="lbl">Ref:</span> nlc.edu.np &nbsp;|&nbsp; <span class="lbl">Updated:</span> 2025</div>
+  </div>
+  <div id="m6-arts" style="display:none">
+    <div class="grid-2">
+      <div class="art-card"><div class="art-num">ARTICLE 1</div><div class="art-title">Constitution as Fundamental Law</div><div class="art-text">This Constitution is the fundamental law of Nepal. Any law inconsistent with this Constitution shall, to the extent of inconsistency, be void.</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+      <div class="art-card"><div class="art-num">ARTICLE 4</div><div class="art-title">State of Nepal</div><div class="art-text">Nepal is an independent, indivisible, sovereign, secular, inclusive, democratic, socialism-oriented, federal democratic republican state.</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+      <div class="art-card"><div class="art-num">ARTICLE 17</div><div class="art-title">Right to Freedom</div><div class="art-text">Freedoms of opinion &amp; expression, press, assembly, political parties, movement, occupation. Subject to reasonable restrictions.</div><div class="art-freq">🔥 <span class="freq-hot">High Frequency</span></div></div>
+      <div class="art-card"><div class="art-num">ARTICLE 18</div><div class="art-title">Right to Equality</div><div class="art-text">All citizens shall be equal before law. No discrimination on grounds of origin, religion, race, caste, tribe, sex, economic condition, language, region, ideology or physical condition.</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+      <div class="art-card"><div class="art-num">ARTICLE 128(2)</div><div class="art-title">Binding Precedent</div><div class="art-text">The interpretation of the Constitution and law made by the Supreme Court shall be binding on all courts and all government offices.</div><div class="art-freq">⚡ High Frequency</div></div>
+      <div class="art-card"><div class="art-num">ARTICLE 133</div><div class="art-title">Jurisdiction of Supreme Court</div><div class="art-text">Original, appellate and extraordinary jurisdiction. Final authority on constitutional matters. Can issue extraordinary writs.</div><div class="art-freq">⚡ High Frequency</div></div>
+    </div>
+  </div>
+  <div id="m6-mcq" style="display:none">
+    <div class="q-card"><div class="q-meta"><span class="badge badge-teal">Constitution</span><span class="badge badge-green">Easy</span></div><div class="q-text">When was the current Constitution of Nepal promulgated?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>2007</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">B</span>2015</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">C</span>1990</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>2012</div></div><div class="exp-box"><h4>Explanation</h4><p>The Constitution of Nepal was promulgated on 20 September 2015 (3 Asoj 2072 BS), replacing the Interim Constitution of Nepal 2007. It is Nepal's seventh constitution and established Nepal as a Federal Democratic Republic.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+    <div class="q-card"><div class="q-meta"><span class="badge badge-teal">Constitution</span><span class="badge badge-gold">Medium</span></div><div class="q-text">How many members does the House of Representatives have under the Constitution of Nepal 2015?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>205</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>250</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">C</span>275</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>300</div></div><div class="exp-box"><h4>Explanation</h4><p>The House of Representatives (Pratinidhi Sabha) has 275 members: 165 elected from First Past the Post constituencies and 110 elected through Proportional Representation. The term is 5 years.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+  </div>
+</div>
+
+<!-- MODULE 7: FUNDAMENTAL RIGHTS -->
+<div class="page" id="pg-module7">
+  <div class="hero-card"><h1>🔒 Fundamental Rights</h1><p>Module 7 — Article-wise coverage of all fundamental rights guaranteed under the Constitution of Nepal 2015.</p></div>
+  <div class="grid-2">
+    <div class="art-card"><div class="art-num">ARTICLES 18–19</div><div class="art-title">Right to Equality</div><div class="art-text">Equal protection of law; prohibition of discrimination on grounds of origin, religion, race, caste, sex; equality of women and men; equal remuneration for equal work.</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 17</div><div class="art-title">Right to Freedom</div><div class="art-text">Freedom of opinion &amp; expression, press &amp; publication, assembly, political parties, movement, occupation. Subject to reasonable restrictions in Art. 17(2).</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 20</div><div class="art-title">Rights relating to Justice</div><div class="art-text">No detention without information; right to counsel; no double jeopardy (Art. 20(8)); no retroactive criminal law; right to fair trial within reasonable time.</div><div class="art-freq">⚡ High Frequency</div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 27</div><div class="art-title">Right to Information</div><div class="art-text">Every citizen has the right to demand and receive information on any matter of concern. Exceptions for national security, foreign relations, investigation.</div><div class="art-freq">⚡ High Frequency</div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 28</div><div class="art-title">Right to Privacy</div><div class="art-text">Privacy of person, residence, property, documents, data, correspondence shall be inviolable except as per law.</div><div class="art-freq">📝 Medium Frequency</div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 31</div><div class="art-title">Right to Education</div><div class="art-text">Every citizen has the right to receive free basic education. Citizens at secondary level entitled to free education from the State.</div><div class="art-freq">🔥 <span class="freq-hot">High Frequency</span></div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 35</div><div class="art-title">Right relating to Health</div><div class="art-text">Every citizen has the right to free basic health services from the State. No person shall be deprived of emergency health services.</div><div class="art-freq">⚡ High Frequency</div></div>
+    <div class="art-card"><div class="art-num">ARTICLE 46</div><div class="art-title">Right to Constitutional Remedies</div><div class="art-text">Proceeding to the Constitutional Bench of the Supreme Court for enforcement of fundamental rights is itself a fundamental right (the guardian right).</div><div class="art-freq">🔥 <span class="freq-hot">Very High Frequency</span></div></div>
+  </div>
+</div>
+
+<!-- JURISTS -->
+<div class="page" id="pg-jurists">
+  <div class="hero-card"><h1>👨‍⚖️ Jurists &amp; Legal Theories</h1><p>Major jurists and their legal theories — repeatedly tested in BALLB entrance. Master all 9.</p></div>
+  <div class="grid-3">
+    <div class="jurist-card" onclick="toast('Austin: Command Theory — law is a command of the sovereign')"><div class="j-avatar">A</div><div class="j-name">John Austin</div><div class="j-school">Analytical / Positivist School</div><div class="j-desc">Command Theory: Law is a command of the sovereign backed by sanction. Strict separation of law and morality. Father of Analytical Jurisprudence.</div></div>
+    <div class="jurist-card" onclick="toast('Salmond: Law = principles applied by state in administration of justice')"><div class="j-avatar">S</div><div class="j-name">John Salmond</div><div class="j-school">Analytical School</div><div class="j-desc">Law as body of principles recognized by the state in administration of justice. Focused on rights, duties, persons and property.</div></div>
+    <div class="jurist-card" onclick="toast('Pound: Law is Social Engineering — balance competing interests')"><div class="j-avatar">P</div><div class="j-name">Roscoe Pound</div><div class="j-school">Sociological School</div><div class="j-desc">"Law is Social Engineering." Law serves to balance competing individual and social interests with maximum efficiency and minimum friction.</div></div>
+    <div class="jurist-card" onclick="toast('Kelsen: Pure Theory — law as normative science, Grundnorm at apex')"><div class="j-avatar">K</div><div class="j-name">Hans Kelsen</div><div class="j-school">Pure Theory of Law</div><div class="j-desc">Law as "normative science." Grundnorm (basic norm) at apex of hierarchy. Hierarchy of norms. Strict separation from morality and politics.</div></div>
+    <div class="jurist-card" onclick="toast('Hart: Primary + Secondary rules. Concept of Law (1961)')"><div class="j-avatar">H</div><div class="j-name">H.L.A. Hart</div><div class="j-school">Neo-Positivist School</div><div class="j-desc">Primary rules (obligations) + Secondary rules (recognition, change, adjudication). Rule of Recognition. Critiqued Austin's Command Theory. "Concept of Law" (1961).</div></div>
+    <div class="jurist-card" onclick="toast('Savigny: Law grows from Volksgeist — the spirit of the people')"><div class="j-avatar">Sv</div><div class="j-name">Friedrich Savigny</div><div class="j-school">Historical School</div><div class="j-desc">Law grows organically with the nation's spirit (Volksgeist). Law is not made but found. Evolved from customs and traditions of the people.</div></div>
+    <div class="jurist-card" onclick="toast('Bentham: Greatest happiness of the greatest number — Utilitarian')"><div class="j-avatar">B</div><div class="j-name">Jeremy Bentham</div><div class="j-school">Utilitarian School</div><div class="j-desc">Greatest happiness of the greatest number. Law as instrument of utility. Father of modern jurisprudence and legal positivism. Created panopticon.</div></div>
+    <div class="jurist-card" onclick="toast('Hobbes: Social Contract — obey sovereign or face nasty, brutish life')"><div class="j-avatar">Ho</div><div class="j-name">Thomas Hobbes</div><div class="j-school">Natural Law / Social Contract</div><div class="j-desc">Social contract theory. State of nature: "nasty, brutish and short." Sovereign power is absolute. Leviathan (1651). Predecessor to Austin's Command Theory.</div></div>
+    <div class="jurist-card" onclick="toast('Marx: Law is superstructure of economic base — serves ruling class')"><div class="j-avatar">M</div><div class="j-name">Karl Marx</div><div class="j-school">Marxist / Economic School</div><div class="j-desc">Law as superstructure of the economic base. Law serves the ruling class. Withering away of law under communism. Economic relations determine legal relations.</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MCQ PRACTICE PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="pg-mcq">
+  <div class="hero-card"><h1>🎯 MCQ Practice Bank</h1><p>10,000+ questions organized by topic, difficulty and year. Track accuracy in real-time.</p></div>
+  <div class="flex gap-12 mb-18" style="flex-wrap:wrap">
+    <select style="width:auto" onchange="toast('Filter applied: '+this.options[this.selectedIndex].text)">
+      <option>All Topics</option><option>Introduction to Law</option><option>Constitution</option><option>Jurists</option><option>Fundamental Rights</option><option>Sources of Law</option>
+    </select>
+    <select style="width:auto" onchange="toast('Difficulty: '+this.value)">
+      <option>All Levels</option><option>Easy</option><option>Medium</option><option>Hard</option>
+    </select>
+    <select style="width:auto">
+      <option>All Years</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option>
+    </select>
+    <button class="btn btn-gold" onclick="toast('Generating random 10 questions…')">🎲 Random 10</button>
+    <div style="margin-left:auto;display:flex;gap:12px;align-items:center">
+      <span class="text-sm text-dim">Accuracy: <strong class="text-gold" id="mcqAccuracy">—</strong></span>
+    </div>
+  </div>
+
+  <div class="q-card"><div class="q-meta"><span class="badge badge-sky">Jurist</span><span class="badge badge-green">Easy</span><span class="q-num">Q1 · 2024</span></div><div class="q-text">"Law is a means of social engineering." This statement was made by:</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>John Austin</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>Hans Kelsen</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">C</span>Roscoe Pound</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>Salmond</div></div><div class="exp-box"><h4>Explanation</h4><p>Roscoe Pound (Sociological school) viewed law as an instrument of social engineering — balancing competing interests to achieve maximum satisfaction with minimum waste and friction. This is among the most-repeated BALLB entrance questions.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button><button class="btn btn-ghost btn-sm" onclick="bookmark('mcq-q1','MCQ: Law is Social Engineering')">⭐</button></div></div>
+
+  <div class="q-card"><div class="q-meta"><span class="badge badge-teal">Constitution</span><span class="badge badge-gold">Medium</span><span class="q-num">Q2</span></div><div class="q-text">Nepal adopted the Federal Democratic Republican system formally under which Constitution?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>Constitution of Nepal 1990</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>Interim Constitution 2007</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">C</span>Constitution of Nepal 2015</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>Constitution of Nepal 1959</div></div><div class="exp-box"><h4>Explanation</h4><p>The Constitution of Nepal 2015 (2072 BS) formally institutionalized the Federal Democratic Republic with 3 tiers of government. While the republic was declared in 2008 under the Interim Constitution, the 2015 Constitution gave it a permanent constitutional framework.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+
+  <div class="q-card"><div class="q-meta"><span class="badge badge-sky">Jurist</span><span class="badge badge-gold">Medium</span><span class="q-num">Q3</span></div><div class="q-text">The concept of "Grundnorm" (Basic Norm) belongs to which jurist?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>H.L.A. Hart</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">B</span>Hans Kelsen</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">C</span>John Salmond</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">D</span>John Austin</div></div><div class="exp-box"><h4>Explanation</h4><p>Hans Kelsen's Pure Theory of Law introduced Grundnorm — the basic norm at the apex of the legal hierarchy from which all other norms derive their validity. It is a presupposed, not enacted, norm. In Nepal's context: the Constitution is the Grundnorm.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+
+  <div class="q-card"><div class="q-meta"><span class="badge badge-teal">Fundamental Rights</span><span class="badge badge-green">Easy</span><span class="q-num">Q4</span></div><div class="q-text">Under which Article of the Constitution of Nepal 2015 is the Right to Constitutional Remedies guaranteed?</div><div class="options"><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">A</span>Article 32</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">B</span>Article 40</div><div class="opt" onclick="selectOpt(this,'wrong')"><span class="opt-letter">C</span>Article 18</div><div class="opt" onclick="selectOpt(this,'correct')" data-correct="true"><span class="opt-letter">D</span>Article 46</div></div><div class="exp-box"><h4>Explanation</h4><p>Article 46 of the Constitution of Nepal 2015 guarantees the Right to Constitutional Remedies — the right to proceed to the Constitutional Bench of the Supreme Court for enforcement of fundamental rights. This right is itself a fundamental right and the guardian of all other rights.</p></div><div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div></div>
+
+  <!-- Admin-added questions rendered here -->
+  <div id="adminQsDisplay"></div>
+  <div class="center mt-22"><button class="btn btn-outline" onclick="toast('Loading more questions from bank…')">Load More Questions →</button></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SUBJECTIVE PRACTICE
+══════════════════════════════════════════ -->
+<div class="page" id="pg-subjective">
+  <div class="hero-card"><h1>✍ Subjective Practice</h1><p>Section B: Long answer (20 marks) and short answers (3 × 10 marks). Practice here with model answer guidance.</p></div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'sub-long')">Long Answer (20m)</button>
+    <button class="tab" onclick="switchTab(this,'sub-short')">Short Answers (10m each)</button>
+  </div>
+  <div id="sub-long" class="card card-p">
+    <h3 class="serif" style="font-size:17px;margin-bottom:5px">Long Answer Practice — 20 Marks</h3>
+    <p class="text-sm text-dim mb-18">Target: 400–500 words. Mention definitions, examples, constitutional provisions.</p>
+    <p style="color:var(--gold);font-weight:600;margin-bottom:14px">Q. Discuss the sources of law with reference to the Constitution of Nepal 2015. (20 marks)</p>
+    <div class="writing-pad">
+      <textarea placeholder="Write your detailed answer here…" oninput="wc(this,'wcLA1',500)" style="min-height:280px"></textarea>
+      <div class="word-meter">Words: <span class="count" id="wcLA1">0</span> <span class="target">/ 500</span><div class="word-bar"><div class="word-bar-fill" style="width:0%"></div></div></div>
+    </div>
+    <div class="kp-box mt-16"><h4>Answer Checklist</h4><ul><li>Define "sources of law"</li><li>List all 6 sources: Constitution, Legislation, Precedent, Custom, Treaties, Equity</li><li>Quote Article 1 (constitutional supremacy)</li><li>Quote Article 128(2) (binding precedent — Supreme Court)</li><li>Mention Article 278 (international treaties)</li><li>Give Nepal-specific examples for each source</li><li>Conclude with hierarchy of sources</li></ul></div>
+    <button class="btn btn-gold mt-16" onclick="saveProgress('essay',true);toast('Long answer saved!','success')">💾 Save Answer</button>
+  </div>
+  <div id="sub-short" style="display:none" class="card card-p">
+    <h3 class="serif" style="font-size:17px;margin-bottom:18px">Short Answer Practice — 10 Marks Each</h3>
+    <div style="margin-bottom:24px">
+      <p style="color:var(--gold);font-weight:600;margin-bottom:12px">Q1. What is the Rule of Law? Explain Dicey's three pillars.</p>
+      <div class="writing-pad"><textarea placeholder="Target: 150–200 words" oninput="wc(this,'wcS1',200)"></textarea><div class="word-meter">Words: <span class="count" id="wcS1">0</span><span class="target">/ 200</span><div class="word-bar"><div class="word-bar-fill"></div></div></div></div>
+    </div>
+    <div style="margin-bottom:24px">
+      <p style="color:var(--teal);font-weight:600;margin-bottom:12px">Q2. Distinguish between natural rights and legal rights.</p>
+      <div class="writing-pad"><textarea placeholder="Target: 150–200 words" oninput="wc(this,'wcS2',200)"></textarea><div class="word-meter">Words: <span class="count" id="wcS2">0</span><span class="target">/ 200</span><div class="word-bar"><div class="word-bar-fill"></div></div></div></div>
+    </div>
+    <div>
+      <p style="color:var(--sky);font-weight:600;margin-bottom:12px">Q3. Write a note on judicial precedent as a source of law in Nepal.</p>
+      <div class="writing-pad"><textarea placeholder="Target: 150–200 words" oninput="wc(this,'wcS3',200)"></textarea><div class="word-meter">Words: <span class="count" id="wcS3">0</span><span class="target">/ 200</span><div class="word-bar"><div class="word-bar-fill"></div></div></div></div>
+    </div>
+    <button class="btn btn-gold mt-16" onclick="toast('Short answers saved!','success')">💾 Save All</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CREATIVE WRITING
+══════════════════════════════════════════ -->
+<div class="page" id="pg-writing">
+  <div class="hero-card"><h1>🖊 Creative Writing</h1><p>Section C: ~300 words, 20 marks. The most overlooked section — practise daily for maximum marks.</p></div>
+  <div class="grid-2 mb-18">
+    <div class="art-card" onclick="openEssay('Rule of Law','Democracy requires the rule of law. A.V. Dicey\'s three pillars, Nepal\'s constitutional commitment (Art. 1), judicial independence.')"><div class="art-num">MOST FREQUENT</div><div class="art-title">Rule of Law</div><div class="art-text">Foundation of democratic governance. Dicey's three pillars. Nepal's constitutional commitment to rule of law.</div></div>
+    <div class="art-card" onclick="openEssay('Human Rights','Universal Declaration 1948, ICCPR, ICESCR, Nepal\'s 35+ fundamental rights, NHRC, treaties.')"><div class="art-num">MOST FREQUENT</div><div class="art-title">Human Rights</div><div class="art-text">Universal Declaration, regional instruments, Nepal's human rights framework and NHRC.</div></div>
+    <div class="art-card" onclick="openEssay('Democracy','Types of democracy (direct/representative), role of law, Nepal\'s democratic journey from monarchy to federal republic.')"><div class="art-num">HIGH FREQUENCY</div><div class="art-title">Democracy</div><div class="art-text">Types of democracy, role of law in democratic society, Nepal's democratic journey.</div></div>
+    <div class="art-card" onclick="openEssay('Judicial Independence','Separation of powers, Art. 127–135 of Nepal Constitution, security of tenure, fixed pay.')"><div class="art-num">HIGH FREQUENCY</div><div class="art-title">Judicial Independence</div><div class="art-text">Separation of powers, constitutional safeguards for judges, importance for rule of law.</div></div>
+    <div class="art-card" onclick="openEssay('Good Governance','Transparency, accountability, participation, rule of law as the four pillars of good governance (UNDP framework).')"><div class="art-num">COMMON</div><div class="art-title">Good Governance</div><div class="art-text">Transparency, accountability, participation and rule of law as pillars of good governance.</div></div>
+    <div class="art-card" onclick="openEssay('Access to Justice','Barriers to justice (cost, distance, language), legal aid, Art. 20 of Nepal Constitution, role of courts.')"><div class="art-num">COMMON</div><div class="art-title">Access to Justice</div><div class="art-text">Barriers to justice, legal aid, constitutional remedies, role of courts in Nepal.</div></div>
+  </div>
+
+  <div class="card card-p" id="essayPad" style="display:none">
+    <h3 class="serif" style="font-size:18px;color:var(--gold);margin-bottom:5px" id="essayPadTitle"></h3>
+    <p class="text-sm text-dim mb-18" id="essayPadHint"></p>
+    <div class="kp-box mb-18"><h4>Essay Structure (300 words)</h4><ul><li><strong>Introduction (~50w):</strong> Define the concept and its significance</li><li><strong>Body Paragraph 1 (~80w):</strong> Key argument + example</li><li><strong>Body Paragraph 2 (~80w):</strong> Second argument + Nepal context</li><li><strong>Body Paragraph 3 (~50w):</strong> Constitutional / legal provisions</li><li><strong>Conclusion (~40w):</strong> Significance and future direction</li></ul></div>
+    <div class="writing-pad">
+      <textarea id="essayTA" placeholder="Start writing your essay here. Target: 280–320 words for full 20 marks." oninput="wc(this,'essayWC',300)" style="min-height:240px"></textarea>
+      <div class="word-meter">Words: <span class="count" id="essayWC">0</span><span class="target">/ 300</span><div class="word-bar"><div class="word-bar-fill"></div></div></div>
+    </div>
+    <div class="flex gap-12 mt-16">
+      <button class="btn btn-gold" onclick="saveEssayLocal()">💾 Save Essay</button>
+      <button class="btn btn-ghost" onclick="document.getElementById('essayPad').style.display='none'">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PREVIOUS QUESTIONS
+══════════════════════════════════════════ -->
+<div class="page" id="pg-prevq">
+  <div class="hero-card"><h1>📂 Previous Year Questions</h1><p>BALLB entrance questions with full model answers and explanations. Select year to filter.</p></div>
+  <div class="yr-tabs">
+    <button class="yr-tab active" onclick="selYear(this,'2024')">2024</button>
+    <button class="yr-tab" onclick="selYear(this,'2023')">2023</button>
+    <button class="yr-tab" onclick="selYear(this,'2022')">2022</button>
+    <button class="yr-tab" onclick="selYear(this,'2021')">2021</button>
+    <button class="yr-tab" onclick="selYear(this,'2020')">2020</button>
+  </div>
+  <div id="prevqList">
+    <div class="prev-q" data-year="2024"><div class="pq-hdr"><span class="badge badge-sky">MCQ</span><span style="font-size:13px">Q1. Law is social engineering. The proponent of this idea is:</span><span class="pq-yr">2024</span></div><div class="text-dim text-sm">A) Austin &nbsp;&nbsp; B) Roscoe Pound &nbsp;&nbsp; C) Kelsen &nbsp;&nbsp; D) Hart</div><button class="expand-btn" onclick="toggleAns(this)">▼ Show Answer &amp; Explanation</button><div class="ans-reveal"><strong class="text-teal">Answer: B) Roscoe Pound</strong><br><br>Roscoe Pound's Sociological school viewed law as an instrument of social engineering — balancing competing interests in society with maximum efficiency and minimum waste. This is one of the most repeated BALLB entrance questions.<br><br><span class="text-xs text-dim">Topic: Jurisprudence | Difficulty: Easy | Source: BALLB Entrance 2024</span></div></div>
+
+    <div class="prev-q" data-year="2024"><div class="pq-hdr"><span class="badge badge-teal">Subjective</span><span style="font-size:13px">Q2. What is the Rule of Law? Explain its significance in Nepal. (10 marks)</span><span class="pq-yr">2024</span></div><button class="expand-btn" onclick="toggleAns(this)">▼ Show Model Answer</button><div class="ans-reveal"><strong class="text-teal">Model Answer:</strong><br><br><strong>Definition:</strong> Rule of Law means supremacy of law over arbitrary power. A.V. Dicey identified three pillars: (1) Supremacy of law — no person punishable except for breach of law established by ordinary court; (2) Equality before law; (3) Predominance of legal spirit — rights result from judicial decisions.<br><br><strong>Nepal Context:</strong> Article 1 of Nepal's Constitution 2015 declares it the fundamental law. Article 18 guarantees equality. The Supreme Court's power of judicial review (Art. 133) ensures rule of law over legislative and executive actions.<br><br><strong>Significance:</strong> Prevents arbitrariness, protects fundamental rights, ensures accountability of state actors, enables predictable legal environment for development.<br><br><span class="text-xs text-dim">Topic: Sources of Law / Constitution | Marks: 10 | 2024</span></div></div>
+
+    <div class="prev-q" data-year="2024"><div class="pq-hdr"><span class="badge badge-gold">Creative Writing</span><span style="font-size:13px">Q3. Write an essay on "Human Rights and their Importance in a Democratic Society" (~300 words, 20 marks)</span><span class="pq-yr">2024</span></div><button class="expand-btn" onclick="toggleAns(this)">▼ Show Model Essay</button><div class="ans-reveal"><strong class="text-teal">Model Essay:</strong><br><br>Human rights are fundamental entitlements that every person possesses by virtue of being human, irrespective of nationality, religion, race or status. The Universal Declaration of Human Rights (1948) first codified these rights globally, followed by binding treaties including the International Covenant on Civil and Political Rights (ICCPR) and the International Covenant on Economic, Social and Cultural Rights (ICESCR).<br><br>In a democratic society, human rights form the cornerstone of governance. They protect individuals from state abuse, ensure equal participation in political life, and guarantee the dignity of every person. Without human rights, elections would be meaningless and governance arbitrary. Democratic institutions — parliament, courts, press — exist to protect and promote these rights.<br><br>Nepal's Constitution 2015 enshrines over 35 fundamental rights, among the most comprehensive in South Asia. These include the right to equality (Art. 18), freedom (Art. 17), education (Art. 31), health (Art. 35), and constitutional remedies (Art. 46). The National Human Rights Commission (NHRC) monitors compliance.<br><br>Without human rights, democracy becomes hollow. A true democracy must not only proclaim rights but actively protect and enforce them through independent institutions. Nepal's journey — from monarchy to federal republic — illustrates that human rights and democracy are inseparable foundations of a just society.<br><br><span class="text-xs text-dim">Section C | 20 marks | ~300 words | BALLB Entrance 2024</span></div></div>
+
+    <div class="prev-q" data-year="2023"><div class="pq-hdr"><span class="badge badge-sky">MCQ</span><span style="font-size:13px">Q1. Which Article of the Constitution of Nepal declares it the fundamental law?</span><span class="pq-yr">2023</span></div><div class="text-dim text-sm">A) Article 4 &nbsp;&nbsp; B) Article 18 &nbsp;&nbsp; C) Article 1 &nbsp;&nbsp; D) Article 133</div><button class="expand-btn" onclick="toggleAns(this)">▼ Show Answer</button><div class="ans-reveal"><strong class="text-teal">Answer: C) Article 1</strong><br><br>Article 1 of the Constitution of Nepal 2015 states: "This Constitution is the fundamental law of Nepal. Any law inconsistent with this Constitution shall, to the extent of inconsistency, be void." This establishes constitutional supremacy.<br><br><span class="text-xs text-dim">Topic: Constitution | Difficulty: Easy | Source: BALLB Entrance 2023</span></div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MOCK TESTS
+══════════════════════════════════════════ -->
+<div class="page" id="pg-mock">
+  <div class="hero-card"><h1>⏱ Mock Tests</h1><p>Simulate real entrance exam conditions. Topic tests, full-length tests and merit simulation.</p></div>
+  <div class="grid-3 mb-22">
+    <div class="mock-card" onclick="toast('Starting Topic Mock Test (20 MCQs, 20 min)…')"><div class="mk-icon">🎯</div><h4>Topic Mock Test</h4><p>Focus on one module at a time. Best for targeted practice.</p><div class="mk-meta"><span>⏱ <strong>20 min</strong></span><span>📋 <strong>20 MCQs</strong></span></div><button class="btn btn-outline" style="margin-top:14px;width:100%;justify-content:center">Start Test</button></div>
+    <div class="mock-card" onclick="toast('Starting Full-Length Mock Test (3 Hours, 100 marks)…')"><div class="mk-icon">📝</div><h4>Full-Length Mock</h4><p>Complete simulation: MCQ + Subjective + Essay. 3 hours.</p><div class="mk-meta"><span>⏱ <strong>3 Hours</strong></span><span>📋 <strong>100 marks</strong></span></div><button class="btn btn-gold" style="margin-top:14px;width:100%;justify-content:center">Start Test</button></div>
+    <div class="mock-card" onclick="toast('Starting Merit Simulation — full test with rank prediction…')"><div class="mk-icon">🏆</div><h4>Merit Simulation</h4><p>Full test + estimated merit rank based on your performance.</p><div class="mk-meta"><span>⏱ <strong>3 Hours</strong></span><span>🏆 <strong>Rank Estimate</strong></span></div><button class="btn btn-outline" style="margin-top:14px;width:100%;justify-content:center">Start Test</button></div>
+  </div>
+
+  <!-- Rank Predictor -->
+  <div class="card card-p">
+    <h3 class="serif" style="font-size:17px;margin-bottom:6px">📊 BALLB Merit Rank Predictor</h3>
+    <p class="text-sm text-dim mb-18">Enter your scores to estimate merit rank.</p>
+    <div class="grid-4" style="align-items:end">
+      <div class="form-group"><label>MCQ Score (0–30)</label><input type="number" id="rMcq" min="0" max="30" placeholder="e.g. 24" oninput="liveScore()"></div>
+      <div class="form-group"><label>Subjective (0–50)</label><input type="number" id="rSub" min="0" max="50" placeholder="e.g. 38" oninput="liveScore()"></div>
+      <div class="form-group"><label>Creative Writing (0–20)</label><input type="number" id="rCw" min="0" max="20" placeholder="e.g. 16" oninput="liveScore()"></div>
+      <div class="form-group"><label>Total</label><div class="mono" id="liveTot" style="font-size:24px;color:var(--gold);font-weight:700;padding:6px 0">0/100</div></div>
+    </div>
+    <button class="btn btn-gold" onclick="calcRank()">📊 Calculate Rank Estimate</button>
+    <div id="rankResult" style="display:none;margin-top:16px;padding:16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--gold)"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PROGRESS
+══════════════════════════════════════════ -->
+<div class="page" id="pg-progress">
+  <div class="hero-card"><h1>📊 My Progress</h1><p>Track study hours, questions solved, accuracy by topic, and weekly consistency.</p></div>
+  <div class="grid-2 mb-18">
+    <div class="analytics-card">
+      <h3>📈 This Week</h3>
+      <div class="user-row"><div class="user-avatar" style="background:var(--gold-dim);color:var(--gold)">📚</div><div class="user-info"><strong>Study Hours</strong><span>Today</span></div><div class="user-stats"><div class="u-time">2.5h</div></div></div>
+      <div class="user-row"><div class="user-avatar" style="background:rgba(76,144,201,.15);color:var(--sky)">🎯</div><div class="user-info"><strong>MCQs Solved</strong><span>This week</span></div><div class="user-stats"><div class="u-time" id="progMCQ">0</div></div></div>
+      <div class="user-row"><div class="user-avatar" style="background:rgba(76,201,168,.15);color:var(--teal)">✍</div><div class="user-info"><strong>Essays Written</strong><span>This week</span></div><div class="user-stats"><div class="u-time">3</div></div></div>
+      <div class="user-row"><div class="user-avatar" style="background:var(--gold-dim);color:var(--gold)">🔥</div><div class="user-info"><strong>Day Streak</strong><span>Consecutive days</span></div><div class="user-stats"><div class="u-time" id="progStreak">0</div></div></div>
+      <div class="user-row"><div class="user-avatar" style="background:rgba(76,175,121,.15);color:var(--green)">✓</div><div class="user-info"><strong>MCQ Accuracy</strong><span>All time</span></div><div class="user-stats"><div class="u-time" id="progAcc">—</div></div></div>
+    </div>
+    <div class="analytics-card">
+      <h3>📅 Daily Study Hours</h3>
+      <div class="bar-chart" id="weeklyChart"></div>
+    </div>
+  </div>
+  <div class="card card-p">
+    <h3 class="serif" style="font-size:17px;margin-bottom:18px">📊 MCQ Accuracy by Topic</h3>
+    <div class="grid-2">
+      <div><div class="prog-wrap"><div class="prog-hdr"><span>Introduction to Law</span><span class="val">89%</span></div><div class="prog-track"><div class="prog-fill green" style="width:89%"></div></div></div><div class="prog-wrap"><div class="prog-hdr"><span>Constitution</span><span class="val">82%</span></div><div class="prog-track"><div class="prog-fill" style="width:82%"></div></div></div><div class="prog-wrap"><div class="prog-hdr"><span>Fundamental Rights</span><span class="val">91%</span></div><div class="prog-track"><div class="prog-fill green" style="width:91%"></div></div></div></div>
+      <div><div class="prog-wrap"><div class="prog-hdr"><span>Jurists &amp; Theories</span><span class="val">74%</span></div><div class="prog-track"><div class="prog-fill blue" style="width:74%"></div></div></div><div class="prog-wrap"><div class="prog-hdr"><span>Sources of Law</span><span class="val">61%</span></div><div class="prog-track"><div class="prog-fill red" style="width:61%"></div></div></div><div class="prog-wrap"><div class="prog-hdr"><span>Rights &amp; Duties</span><span class="val">57%</span></div><div class="prog-track"><div class="prog-fill red" style="width:57%"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     READINESS METER
+══════════════════════════════════════════ -->
+<div class="page" id="pg-readiness">
+  <div class="hero-card"><h1>🎓 Readiness Meter</h1><p>Your overall BALLB entrance readiness. Complete all modules to achieve 100%.</p></div>
+  <div class="grid-2">
+    <div class="card card-p">
+      <h3 class="serif" style="font-size:17px;margin-bottom:18px">BALLB Entrance Readiness</h3>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Law Fundamentals</span><span class="val">92%</span></div><div class="prog-track"><div class="prog-fill" data-w="92%" style="width:92%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Constitution</span><span class="val">87%</span></div><div class="prog-track"><div class="prog-fill" data-w="87%" style="width:87%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Fundamental Rights</span><span class="val">94%</span></div><div class="prog-track"><div class="prog-fill" data-w="94%" style="width:94%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Jurists &amp; Theories</span><span class="val">76%</span></div><div class="prog-track"><div class="prog-fill blue" data-w="76%" style="width:76%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Sources of Law</span><span class="val">68%</span></div><div class="prog-track"><div class="prog-fill blue" data-w="68%" style="width:68%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Rights &amp; Duties</span><span class="val">55%</span></div><div class="prog-track"><div class="prog-fill red" data-w="55%" style="width:55%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>Creative Writing</span><span class="val">81%</span></div><div class="prog-track"><div class="prog-fill" data-w="81%" style="width:81%"></div></div></div>
+      <div class="prog-wrap"><div class="prog-hdr"><span>MCQ Practice</span><span class="val">34%</span></div><div class="prog-track"><div class="prog-fill red" data-w="34%" style="width:34%"></div></div></div>
+      <div style="border-top:1px solid var(--border);padding-top:16px;margin-top:6px">
+        <div class="prog-hdr" style="font-size:15px"><strong>Overall Readiness</strong><strong class="val" style="font-size:17px">88%</strong></div>
+        <div class="prog-track" style="height:9px;margin-top:8px"><div class="prog-fill" style="width:88%"></div></div>
+      </div>
+    </div>
+    <div class="card card-p" style="text-align:center">
+      <h3 class="serif" style="font-size:17px;margin-bottom:6px">Overall Readiness</h3>
+      <div class="readiness-wrap">
+        <div class="r-circle" style="background:conic-gradient(var(--gold) 0% 88%,var(--border) 88% 100%)"><div class="r-circle-inner"><div class="r-pct">88%</div><div class="r-lbl">READY</div></div></div>
+        <div class="r-status">
+          <p><strong class="text-teal">Strong Areas:</strong> Fundamental Rights, Law Fundamentals, Constitution</p><br>
+          <p><strong class="text-red">Needs Work:</strong> Rights &amp; Duties (55%), MCQ Practice (34%), Sources of Law (68%)</p><br>
+          <p>Reach <strong class="text-gold">100%</strong> to unlock:<br><strong class="text-gold">🎓 Congratulations. You are Entrance Ready.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUDY PLAN -->
+<div class="page" id="pg-studyplan">
+  <div class="hero-card"><h1>📅 BALLB Study Roadmap</h1><p>Structured 8-week preparation plan aligned with TU Faculty of Law entrance requirements.</p></div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div class="phase-card ph1"><h3>Phase 1 – Foundation (Week 1–2)</h3><p class="phase-desc">Build core legal knowledge. No prior background needed.</p><div class="chips"><span class="chip">Introduction to Law</span><span class="chip">Types of Law</span><span class="chip">Nature of Law</span><span class="chip">Constitution Overview</span><span class="chip">Rights &amp; Duties Basics</span></div></div>
+    <div class="phase-card ph2"><h3>Phase 2 – Core Legal Knowledge (Week 3–4)</h3><p class="phase-desc">Deep dive into high-yield entrance topics tested every year.</p><div class="chips"><span class="chip">Sources of Law</span><span class="chip">Jurisprudence Schools</span><span class="chip">9 Major Jurists</span><span class="chip">Legal Personality</span><span class="chip">Constitutional Development Timeline</span></div></div>
+    <div class="phase-card ph3"><h3>Phase 3 – Practice (Week 5–6)</h3><p class="phase-desc">High-volume MCQ and writing practice. Aim for 50+ MCQs/day.</p><div class="chips"><span class="chip">500+ MCQs</span><span class="chip">Subjective Answers</span><span class="chip">10 Practice Essays</span><span class="chip">Short Notes</span><span class="chip">Previous Year Papers</span></div></div>
+    <div class="phase-card ph4"><h3>Phase 4 – Exam Simulation (Week 7)</h3><p class="phase-desc">Full mock tests under strict exam conditions. Build stamina.</p><div class="chips"><span class="chip">3 Full Mock Tests</span><span class="chip">Previous Year Papers 2020–2024</span><span class="chip">Time Management</span><span class="chip">Merit Rank Prediction</span></div></div>
+    <div class="phase-card ph5"><h3>Phase 5 – Final Revision (Week 8)</h3><p class="phase-desc">Target weak areas. Memorise key articles and jurist quotes.</p><div class="chips"><span class="chip">Weak Area Focus</span><span class="chip">Constitutional Articles</span><span class="chip">Jurist Definitions</span><span class="chip">High-Yield MCQs</span><span class="chip">Essay Templates</span></div></div>
+  </div>
+</div>
+
+<!-- BOOKMARKS -->
+<div class="page" id="pg-bookmarks">
+  <div class="hero-card"><h1>⭐ Bookmarks</h1><p>Your saved questions, notes and study items. Star anything to save it here.</p></div>
+  <div class="grid-3" id="bookmarksGrid"><p class="text-dim center" style="padding:32px">No bookmarks yet. Star items while studying to save them here.</p></div>
+</div>
+
+<!-- AI STUDY MATERIALS -->
+<div class="page" id="pg-materials">
+  <div class="hero-card"><h1>🤖 AI Study Materials</h1><p>Upload any study file — PDF, text, notes — and the AI will automatically generate MCQs, summaries and key points.</p></div>
+  <div class="card card-p mb-18">
+    <h3 class="serif" style="font-size:16px;margin-bottom:14px">📂 View Generated Materials</h3>
+    <div class="grid-2" id="materialsGrid"><p class="text-dim text-sm center" style="padding:24px">No materials yet. Upload files in the Admin Panel to generate AI study notes.</p></div>
+  </div>
+  <div class="card card-p" style="border-color:rgba(201,168,76,.3)">
+    <p class="text-sm" style="color:var(--gold)">💡 Upload study materials in <strong>Admin Panel → Upload Materials</strong> to generate AI-powered MCQs and notes from your own content.</p>
+    <button class="btn btn-gold btn-sm mt-16" onclick="nav('admin')">Go to Admin Panel →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ADMIN PANEL
+══════════════════════════════════════════ -->
+<div class="page" id="pg-admin">
+  <div class="hero-card" style="border-color:rgba(201,76,90,.3)"><div class="hero-symbol">🛠</div><h1>Admin Panel</h1><p>Upload study materials, add questions, publish notices, manage content and track student analytics. All changes save locally and persist across sessions.</p></div>
+
+  <!-- UPLOAD MATERIALS -->
+  <div class="admin-panel">
+    <div class="panel-hdr"><span style="font-size:20px">📁</span><h3>Upload Study Materials (AI Auto-Process)</h3></div>
+    <div class="upload-area" id="uploadArea" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="handleDrop(event)">
+      <input type="file" multiple accept=".txt,.pdf,.md,.doc,.docx" onchange="handleFiles(this.files)">
+      <span class="upload-icon">📂</span>
+      <p>Drag &amp; drop study files here, or <strong>click to browse</strong></p>
+      <p class="text-xs text-dim" style="margin-top:6px">Supported: TXT, PDF, DOC, DOCX, MD — AI will generate MCQs, summaries and key points automatically</p>
+    </div>
+    <div class="file-list" id="fileList"></div>
+  </div>
+
+  <!-- ADD QUESTION -->
+  <div class="admin-panel">
+    <div class="panel-hdr"><span style="font-size:20px">➕</span><h3>Add MCQ Question</h3></div>
+    <div class="form-group"><label>Question Text</label><textarea id="aqQ" rows="3" placeholder="Enter the question…"></textarea></div>
+    <div class="grid-2">
+      <div class="form-group"><label>Option A</label><input type="text" id="aqA" placeholder="Option A"></div>
+      <div class="form-group"><label>Option B</label><input type="text" id="aqB" placeholder="Option B"></div>
+      <div class="form-group"><label>Option C</label><input type="text" id="aqC" placeholder="Option C"></div>
+      <div class="form-group"><label>Option D</label><input type="text" id="aqD" placeholder="Option D"></div>
+    </div>
+    <div class="grid-2">
+      <div class="form-group"><label>Correct Answer</label><select id="aqCorr"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></div>
+      <div class="form-group"><label>Topic</label><select id="aqTopic"><option>Introduction to Law</option><option>Sources of Law</option><option>Rights &amp; Duties</option><option>Constitution</option><option>Fundamental Rights</option><option>Jurists</option></select></div>
+    </div>
+    <div class="form-group"><label>Explanation</label><textarea id="aqExp" rows="2" placeholder="Brief explanation of the correct answer…"></textarea></div>
+    <button class="btn btn-gold" onclick="addAdminQ();renderAdminQs()">✅ Add Question</button>
+    <div style="margin-top:16px;font-size:12.5px;color:var(--text3)">Questions added: <strong class="text-gold" id="adminQCount">0</strong></div>
+  </div>
+
+  <!-- PUBLISH NOTICE -->
+  <div class="admin-panel">
+    <div class="panel-hdr"><span style="font-size:20px">📢</span><h3>Publish Notice / Announcement</h3></div>
+    <div class="form-group"><label>Notice Title</label><input type="text" id="noticeTitle" placeholder="e.g. BALLB Entrance Date 2025 Announced"></div>
+    <div class="form-group"><label>Notice Content</label><textarea id="noticeBody" rows="3" placeholder="Enter notice details…"></textarea></div>
+    <button class="btn btn-gold" onclick="publishNotice()">📢 Publish Notice</button>
+  </div>
+
+  <!-- MANAGE QUESTIONS LIST -->
+  <div class="admin-panel">
+    <div class="panel-hdr"><span style="font-size:20px">📋</span><h3>Manage Added Questions</h3></div>
+    <div id="adminQList"><p class="text-dim text-sm">No custom questions added yet.</p></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     USER ANALYTICS
+══════════════════════════════════════════ -->
+<div class="page" id="pg-analytics">
+  <div class="hero-card"><h1>📈 User Analytics</h1><p>Track how students use your shared link — session duration, pages visited, study patterns. All data is stored locally per browser.</p></div>
+
+  <div class="grid-2 mb-18">
+    <div class="analytics-card">
+      <h3>👥 Session Overview</h3>
+      <div id="sessionSummary" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+        <div class="card card-p center"><div class="stat-val" id="totalSessions">—</div><div class="stat-lbl">Total Sessions</div></div>
+        <div class="card card-p center"><div class="stat-val" id="totalTime">—</div><div class="stat-lbl">Total Study Time</div></div>
+      </div>
+      <div id="analyticsBody"><p class="text-dim text-sm center">Loading…</p></div>
+    </div>
+    <div class="analytics-card">
+      <h3>📊 Most Visited Pages</h3>
+      <div id="pageStats"><p class="text-dim text-sm">No data yet.</p></div>
+    </div>
+  </div>
+
+  <div class="card card-p">
+    <h3 class="serif" style="font-size:16px;margin-bottom:14px">📖 How to Share &amp; Track</h3>
+    <div class="study-body">
+      <p>When you host this on <strong>GitHub Pages</strong>, every student who visits the link stores their session data in <em>their own browser's localStorage</em>. Since this is a static site, you cannot see others' data directly.</p>
+      <div class="kp-box"><h4>To collect analytics from students:</h4><ul><li>Ask students to screenshot their "My Progress" and "Session Stats" and share with you</li><li>Or integrate a free analytics service: add <strong>Google Analytics</strong> or <strong>Plausible</strong> script to the &lt;head&gt; for real page-view tracking</li><li>The Admin Panel tracks <em>your own</em> sessions across visits to this URL</li><li>For multi-user tracking from a shared link, a backend server (Firebase, Supabase free tier) would be needed</li></ul></div>
+      <p><strong>Current session data</strong> shows your own usage history across visits to this site.</p>
+    </div>
+    <button class="btn btn-outline btn-sm mt-16" onclick="refreshAnalytics()">🔄 Refresh Analytics</button>
+    <button class="btn btn-danger btn-sm mt-16" onclick="if(confirm('Clear all session history?')){localStorage.removeItem('mpa_sessions');renderAnalytics();toast('Session data cleared')}">🗑 Clear History</button>
+  </div>
+</div>
+
+<!-- MODAL: Material View -->
+<div class="modal-overlay" id="matModal">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="document.getElementById('matModal').classList.remove('show')">✕</button>
+    <div id="matModalBody"></div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>© All Rights Reserved to Mrpacecone Academy</strong> &nbsp;·&nbsp; BALLB Entrance Hub &nbsp;·&nbsp; Sources: nlc.edu.np · fol.edu.np · lawcommission.gov.np · Constitution of Nepal 2015
+</div>
+</main>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/core.js"></script>
+<script>
+// ── TAB SWITCHER ──
+function switchTab(btn, targetId) {
+  const page = btn.closest('.page');
+  page.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  // hide all siblings
+  const parent = btn.closest('.page');
+  // find all tab content divs — they come after the .tabs div
+  const tabsEl = btn.closest('.tabs');
+  let el = tabsEl.nextElementSibling;
+  while(el) {
+    el.style.display = 'none';
+    el = el.nextElementSibling;
+    if(!el || el.classList.contains('card') && !el.id) break;
+  }
+  // hide all possible panels
+  const all = ['m1-notes','m1-mcq','m1-short','m6-notes','m6-arts','m6-mcq','sub-long','sub-short'];
+  all.forEach(id=>{ const e=document.getElementById(id); if(e)e.style.display='none'; });
+  const target = document.getElementById(targetId);
+  if(target) target.style.display='block';
+}
+
+// ── ESSAY ──
+function openEssay(title, hint) {
+  document.getElementById('essayPadTitle').textContent = '✍ ' + title;
+  document.getElementById('essayPadHint').textContent = hint;
+  document.getElementById('essayTA').value='';
+  document.getElementById('essayWC').textContent='0';
+  const pad = document.getElementById('essayPad');
+  pad.style.display='block';
+  pad.scrollIntoView({behavior:'smooth'});
+}
+
+function saveEssayLocal() {
+  const text = document.getElementById('essayTA').value.trim();
+  if(!text){toast('Write something first!','error');return;}
+  const title = document.getElementById('essayPadTitle').textContent;
+  const essays = S.get('mpa_essays',[]);
+  essays.push({title, text, date:new Date().toISOString(), words: text.split(/\s+/).length});
+  S.set('mpa_essays', essays);
+  saveProgress('essay', true);
+  toast('✅ Essay saved! Total essays: '+essays.length,'success');
+}
+
+// ── LIVE SCORE ──
+function liveScore() {
+  const m=parseInt(document.getElementById('rMcq').value)||0;
+  const s=parseInt(document.getElementById('rSub').value)||0;
+  const c=parseInt(document.getElementById('rCw').value)||0;
+  document.getElementById('liveTot').textContent=(m+s+c)+'/100';
+}
+
+// ── FILE UPLOAD ──
+let fileCounter = 0;
+function handleFiles(files) {
+  Array.from(files).forEach(handleFile);
+}
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('uploadArea').classList.remove('drag');
+  handleFiles(e.dataTransfer.files);
+}
+function handleFile(file) {
+  const id = 'f'+Date.now()+(fileCounter++);
+  const size = file.size<1024?file.size+'B':file.size<1048576?Math.round(file.size/1024)+'KB':Math.round(file.size/1048576)+'MB';
+  const listEl = document.getElementById('fileList');
+  const item = document.createElement('div');
+  item.className='file-item'; item.id='file-'+id;
+  const icon = file.name.endsWith('.pdf')?'📕':file.name.endsWith('.doc')||file.name.endsWith('.docx')?'📘':'📄';
+  item.innerHTML=`<span class="fi-icon">${icon}</span><span class="fi-name">${file.name}</span><span class="fi-size">${size}</span><span class="fi-status"><span class="processing-badge">⏳ Queued</span></span>`;
+  listEl.appendChild(item);
+  toast('📂 File queued: '+file.name);
+  setTimeout(()=>processUploadedFile(file, id), 500);
+}
+
+// ── ADMIN Q RENDERING ──
+function renderAdminQs() {
+  const qs = S.get('mpa_admin_qs',[]);
+  const el = document.getElementById('adminQCount');
+  if(el) el.textContent=qs.length;
+  const listEl = document.getElementById('adminQList');
+  if(!listEl) return;
+  if(!qs.length){listEl.innerHTML='<p class="text-dim text-sm">No custom questions added yet.</p>';return;}
+  listEl.innerHTML=qs.slice(-10).reverse().map((q,i)=>`
+    <div style="background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:10px">
+      <div style="font-size:13.5px;font-weight:600;margin-bottom:7px">${q.q}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${q.opts.map((o,j)=>`<span class="badge ${j===q.correct?'badge-green':'badge-sky'}">${['A','B','C','D'][j]}: ${o}</span>`).join('')}
+      </div>
+      <div style="font-size:11.5px;color:var(--text3);margin-top:6px">${q.topic} · ${new Date(q.added).toLocaleDateString()}</div>
+    </div>`).join('');
+
+  // Render in MCQ page
+  const mcqEl = document.getElementById('adminQsDisplay');
+  if(mcqEl) {
+    mcqEl.innerHTML=qs.map((q,i)=>`
+      <div class="q-card">
+        <div class="q-meta"><span class="badge badge-gold">${q.topic}</span><span class="badge badge-teal">Admin Added</span><span class="q-num">AQ${i+1}</span></div>
+        <div class="q-text">${q.q}</div>
+        <div class="options">
+          ${q.opts.map((o,j)=>`<div class="opt" onclick="selectOpt(this,'${j===q.correct?'correct':'wrong'}')" ${j===q.correct?'data-correct="true"':''}><span class="opt-letter">${['A','B','C','D'][j]}</span>${o}</div>`).join('')}
+        </div>
+        <div class="exp-box"><h4>Explanation</h4><p>${q.exp||'No explanation provided.'}</p></div>
+        <div class="q-actions"><button class="btn btn-ghost btn-sm" onclick="showExp(this)">📖 Explanation</button></div>
+      </div>`).join('');
+  }
+}
+
+// ── ANALYTICS REFRESH ──
+function refreshAnalytics() {
+  const stats = getSessionStats();
+  const totEl = document.getElementById('totalSessions');
+  const timeEl = document.getElementById('totalTime');
+  const pageEl = document.getElementById('pageStats');
+  if(totEl) totEl.textContent = stats.sessions;
+  if(timeEl) {
+    const mins = Math.round(stats.totalSec/60);
+    timeEl.textContent = mins<60?mins+'m':(mins/60).toFixed(1)+'h';
+  }
+  if(pageEl) {
+    const sorted = Object.entries(stats.pageCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    if(!sorted.length){pageEl.innerHTML='<p class="text-dim text-sm">No page visits recorded yet.</p>';return;}
+    const maxCount = sorted[0][1];
+    pageEl.innerHTML=sorted.map(([page,count])=>`
+      <div class="prog-wrap" style="margin-bottom:10px">
+        <div class="prog-hdr"><span>${PAGE_TITLES[page]||page}</span><span class="val">${count} visits</span></div>
+        <div class="prog-track"><div class="prog-fill blue" style="width:${Math.round(count/maxCount*100)}%"></div></div>
+      </div>`).join('');
+  }
+  renderAnalytics();
+}
+
+// ── PROGRESS PAGE UPDATE ──
+function updateProgressPage() {
+  const p = S.get('mpa_progress',{mcq:0,correct:0,streak:0});
+  const pmEl=document.getElementById('progMCQ');
+  const psEl=document.getElementById('progStreak');
+  const paEl=document.getElementById('progAcc');
+  if(pmEl)pmEl.textContent=p.mcq||0;
+  if(psEl)psEl.textContent=p.streak||0;
+  if(paEl)paEl.textContent=p.mcq>0?Math.round((p.correct||0)/p.mcq*100)+'%':'—';
+}
+
+// ── INIT EXTRAS ──
+document.addEventListener('DOMContentLoaded',()=>{
+  renderAdminQs();
+  updateProgressPage();
+  refreshAnalytics();
+  // override nav to also update progress
+  const origNav = window.nav;
+  window.nav = function(id) {
+    origNav(id);
+    updateProgressPage();
+    if(id==='analytics') setTimeout(refreshAnalytics,100);
+    if(id==='admin') renderAdminQs();
+    if(id==='materials') renderMaterials();
+  };
+});
+</script>
+</body>
+</html>
